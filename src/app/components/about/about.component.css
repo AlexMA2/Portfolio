@@ -1,0 +1,34 @@
+.about {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 2rem;
+  padding: 1rem 0;
+  transform: scaleX(-1);
+}
+
+.about header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.about header svg {
+  padding: 0 0.5rem;
+}
+
+section {
+  width: 80%;
+}
+
+section p {
+  font-size: 1.2rem;
+  margin: 1rem 0rem;
+  text-align: center;
+  letter-spacing: 1px;
+}

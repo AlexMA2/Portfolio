@@ -1,0 +1,19 @@
+article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scaleX(-1);
+}
+
+article h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+article a {
+  font-size: 8rem;
+}

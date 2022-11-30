@@ -1,0 +1,16 @@
+<article>
+  <header>
+    <h1>Skills</h1>
+  </header>
+  <div class="skill" *ngFor="let skill of skills">
+    <div class="skill_data">
+      <p class="skill_name">{{ skill.name }}</p>
+      <p class="skill_time">({{ skill.time }})</p>
+    </div>
+    <ul class="skill_projects">
+      <li *ngFor="let project of skill.projects">
+        <a [href]="project.url">{{ project.name }}</a>
+      </li>
+    </ul>
+  </div>
+</article>
