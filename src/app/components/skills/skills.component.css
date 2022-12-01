@@ -9,12 +9,6 @@ article {
   padding: 1rem 0;
 }
 
-article header {
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 700;
-}
-
 .skill {
   display: flex;
   flex-direction: column;
@@ -55,4 +49,11 @@ article header {
 
 .skill_projects li a {
   text-align: left;
+}
+
+@media (max-width: 1200px) {
+  article {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }

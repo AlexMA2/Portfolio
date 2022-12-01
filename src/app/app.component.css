@@ -86,3 +86,40 @@ i {
   font-size: 50px;
   color: #901335;
 }
+
+#mobilephone {
+  display: none;
+  visibility: hidden;
+  text-align: center;
+  width: 50vw;
+}
+
+@media (max-width: 1200px) {
+  .book {
+    width: 350px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 875px) {
+  .book {
+    width: 350px;
+    height: 500px;
+  }
+
+  #prev, #next {
+    transform: translateY(300px) !important;
+  }
+}
+
+@media (max-width: 725px) {
+  main {
+    display: none;
+    visibility: hidden;
+  }
+
+  #mobilephone {
+    display: block;
+    visibility: visible;
+  }
+}

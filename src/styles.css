@@ -6,3 +6,19 @@
   box-sizing: border-box;
   font-family: 'Indie Flower', cursive;
 }
+
+.page-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  p, a {
+    font-size: 1rem !important;
+  }
+}

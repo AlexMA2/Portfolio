@@ -4,12 +4,13 @@
     [ngStyle]="prevButton"
     [disabled]="currentLocation <= 1"
     (click)="goPrevPage()"
+    id="prev"
   >
     <i class="fas fa-arrow-circle-left"></i>
   </button>
 
   <!-- Book -->
-  <div [ngStyle]="book" class="book">
+  <div #book [ngStyle]="bookStyles" class="book">
     <!-- Paper 1 -->
     <div
       [ngStyle]="{ 'z-index': paperFlipped[0].zIndex }"
@@ -56,7 +57,11 @@
     [ngStyle]="nextButton"
     [disabled]="currentLocation >= maxLocation"
     (click)="goNextPage()"
+    id="next"
   >
     <i class="fas fa-arrow-circle-right"></i>
   </button>
 </main>
+<h1 id="mobilephone">
+  To have a better experience, please, enter since a computer
+</h1>

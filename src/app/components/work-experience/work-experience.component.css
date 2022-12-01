@@ -8,7 +8,7 @@ article {
   padding: 1rem 0;
 }
 
-article header {
+.page-title {
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
@@ -53,4 +53,12 @@ article section>div p {
   font-size: 1.2rem;
   letter-spacing: 1px;
   width: 100%;
+}
+
+@media (max-width: 1200px) {
+
+  .work-dates p {
+    font-size: 0.8rem !important;
+  }
+
 }

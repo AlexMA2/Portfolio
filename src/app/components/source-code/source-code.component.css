@@ -8,12 +8,12 @@ article {
   transform: scaleX(-1);
 }
 
-article h1 {
+.page-title {
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
 }
 
-article a {
+article a svg {
   font-size: 8rem;
 }

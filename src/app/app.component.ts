@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 interface PaperData {
   flipped: boolean;
@@ -10,7 +16,7 @@ interface PaperData {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'Portafolio';
   currentLocation = 1;
   numberOfPapers = 3;
@@ -18,8 +24,16 @@ export class AppComponent implements OnInit {
 
   prevButton = {};
   nextButton = {};
-  book = {};
+  bookStyles = {};
   paperFlipped: PaperData[] = [];
+
+  @ViewChild('book')
+  bookEl!: ElementRef;
+
+  ngAfterViewInit() {
+    //Recién en este punto tendrás acceso al valor
+    console.log();
+  }
 
   ngOnInit(): void {
     for (let i = 0; i < this.numberOfPapers; i++) {
@@ -31,13 +45,19 @@ export class AppComponent implements OnInit {
   }
 
   openBook() {
-    this.book = this.translateX('50%');
-    this.prevButton = this.translateX('-263px');
-    this.nextButton = this.translateX('263px');
+    this.bookStyles = this.translateX('50%');
+    const translatePrevBtn =
+      '-' + (this.bookEl.nativeElement.offsetWidth / 2 + 1) + 'px';
+    this.prevButton = this.translateX(translatePrevBtn);
+    console.log(translatePrevBtn);
+    const translateNextBtn =
+      this.bookEl.nativeElement.offsetWidth / 2 + 1 + 'px';
+    this.nextButton = this.translateX(translateNextBtn);
+    console.log(translateNextBtn);
   }
 
   closeBook(isAtBeginning: boolean) {
-    this.book = this.translateX(isAtBeginning ? '0%' : '100%');
+    this.bookStyles = this.translateX(isAtBeginning ? '0%' : '100%');
 
     this.prevButton = this.translateX('0px');
     this.nextButton = this.translateX('0px');

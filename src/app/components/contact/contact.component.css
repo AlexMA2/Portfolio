@@ -8,7 +8,7 @@ article {
   padding: 1rem 0;
 }
 
-article header h1 {
+.page-title {
   font-size: 2rem;
   text-align: center;
   font-weight: 700;
