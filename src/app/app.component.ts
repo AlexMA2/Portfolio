@@ -16,7 +16,7 @@ interface PaperData {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'Portafolio';
   currentLocation = 1;
   numberOfPapers = 3;
@@ -29,11 +29,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   @ViewChild('book')
   bookEl!: ElementRef;
-
-  ngAfterViewInit() {
-    //Recién en este punto tendrás acceso al valor
-    console.log();
-  }
 
   ngOnInit(): void {
     for (let i = 0; i < this.numberOfPapers; i++) {
@@ -49,11 +44,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     const translatePrevBtn =
       '-' + (this.bookEl.nativeElement.offsetWidth / 2 + 1) + 'px';
     this.prevButton = this.translateX(translatePrevBtn);
-    console.log(translatePrevBtn);
+
     const translateNextBtn =
       this.bookEl.nativeElement.offsetWidth / 2 + 1 + 'px';
     this.nextButton = this.translateX(translateNextBtn);
-    console.log(translateNextBtn);
   }
 
   closeBook(isAtBeginning: boolean) {
