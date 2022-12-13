@@ -20,7 +20,7 @@ export class SkillsComponent implements OnInit {
   skills: Skill[] = [
     {
       name: 'HTML / CSS / JavaScript',
-      time: '2 years and 6 months',
+      time: '4/1/2020',
       projects: [
         {
           name: 'CalculatorGame',
@@ -34,7 +34,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       name: 'Angular / TypeScript',
-      time: '1 year and 6 months',
+      time: '12/1/2022',
       projects: [
         {
           name: 'DooFast',
@@ -48,7 +48,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       name: 'React.JS / Next.JS',
-      time: '1 year and 6 months',
+      time: '4/1/2021',
       projects: [
         {
           name: 'ColesRoom',
@@ -66,11 +66,15 @@ export class SkillsComponent implements OnInit {
     },
     {
       name: 'ASP. NET / C #',
-      time: '1 year',
+      time: '3/1/2022',
       projects: [
         {
           name: 'Veterinaria API',
           url: 'https://github.com/AlexMA2/API-VeterinariaAPP',
+        },
+        {
+          name: 'Pizzeria API',
+          url: 'https://github.com/AlexMA2/PizzeriaAPI',
         },
       ],
     },
@@ -78,5 +82,23 @@ export class SkillsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.skills.forEach((skill) => {
+      skill.time = this.calculatetime(skill.time);
+    });
+  }
+
+  calculatetime(time: string): string {
+    const date = new Date(time);
+    const now = new Date();
+    const diffDays = Math.ceil(
+      Math.abs(now.getTime() - date.getTime()) / (1000 * 3600 * 24)
+    );
+    const years = Math.floor(diffDays / 365);
+    const months = Math.floor((diffDays % 365) / 30);
+
+    return `(${years} year${years !== 1 ? 's' : ''} and ${months} month${
+      months !== 1 ? 's' : ''
+    })`;
+  }
 }
