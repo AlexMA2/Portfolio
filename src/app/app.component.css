@@ -121,5 +121,17 @@ i {
   #mobilephone {
     display: block;
     visibility: visible;
+    width: 75%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #710F2A;
+    color: #fff;
+    border-radius: 0.5rem;
+  }
+
+  #mobilephone p {
+    font-size: 1.5rem;
   }
 }
