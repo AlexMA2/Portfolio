@@ -34,7 +34,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       name: 'Angular / TypeScript',
-      time: '12/1/2022',
+      time: '12/1/2021',
       projects: [
         {
           name: 'DooFast',
@@ -96,9 +96,16 @@ export class SkillsComponent implements OnInit {
     );
     const years = Math.floor(diffDays / 365);
     const months = Math.floor((diffDays % 365) / 30);
-
-    return `(${years} year${years !== 1 ? 's' : ''} and ${months} month${
-      months !== 1 ? 's' : ''
-    })`;
+    let msg = '';
+    if (years > 0) {
+      msg += `${years} year${years !== 1 ? 's' : ''}`;
+    }
+    if (years > 0 && months > 0) {
+      msg += ' and ';
+    }
+    if (months > 0) {
+      msg += `${months} month${months !== 1 ? 's' : ''}`;
+    }
+    return msg;
   }
 }
