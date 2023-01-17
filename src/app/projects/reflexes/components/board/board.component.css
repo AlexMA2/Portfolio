@@ -1,0 +1,131 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #3f1100;
+}
+
+.game {
+  background-color: #709faf;
+  width: 1000px;
+  padding: 2rem;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+}
+
+.miniscreen:first-child {
+  border-left: 10px solid #2e3d43;
+}
+
+.miniscreen {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  border: 10px solid #2e3d43;
+  border-left: none;
+  color: #b3fe00;
+  font-weight: bold;
+  font-size: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.button {
+  width: 75px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #5e5e5e;
+}
+
+
+.led {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem;
+  background-color: #8c4443;
+
+}
+
+.number {
+  background-color: #1a1a1a;
+  color: #cacaca;
+  height: 50px;
+  display: flex;
+  font-size: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.errors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight {
+  background-color: #b3fe00;
+}
+
+.code {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.error {
+  border: 8px solid #000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin: 0 1rem;
+}
+
+.error-highlight {
+  background-color: #b3fe00;
+  color: #ff3d0d;
+}
+
+.error-no-highlight {
+  background-color: #425862;
+  color: #303439;
+}
+
+button {
+  background-color: #425862;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}

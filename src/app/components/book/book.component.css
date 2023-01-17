@@ -1,0 +1,137 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+  background-image: url(../../../assets/wooden-background-hd.jpg);
+}
+
+.book {
+  position: relative;
+  width: 525px;
+  height: 750px;
+  transition: transform 0.5s;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  perspective: 1500px;
+}
+
+.front,
+.back {
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 1s;
+}
+
+.front>div, .back>div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back {
+  z-index: 0;
+}
+
+.back-content {
+  transform: rotateY(180deg)
+}
+
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.5s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover i {
+  color: #710F2A;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: #710F2A;
+}
+
+i {
+  font-size: 50px;
+  color: #901335;
+}
+
+#mobilephone {
+  display: none;
+  visibility: hidden;
+  text-align: center;
+  width: 50vw;
+}
+
+@media (max-width: 1200px) {
+  .book {
+    width: 350px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 875px) {
+  .book {
+    width: 350px;
+    height: 500px;
+  }
+
+  #prev, #next {
+    transform: translateY(300px) !important;
+  }
+}
+
+@media (max-width: 725px) {
+  main {
+    display: none;
+    visibility: hidden;
+  }
+
+  #mobilephone {
+    display: block;
+    visibility: visible;
+    width: 75%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #710F2A;
+    color: #fff;
+    border-radius: 0.5rem;
+  }
+
+  #mobilephone p {
+    font-size: 1.5rem;
+  }
+}

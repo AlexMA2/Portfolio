@@ -1,0 +1,39 @@
+<main (click)="selectNumber()">
+  <h1 class="code">Code: {{ code.join(" ") }}</h1>
+  <div class="game">
+    <div class="screen">
+      <div class="miniscreen">{{ screen[0] }}</div>
+      <div class="miniscreen">{{ screen[1] }}</div>
+      <div class="miniscreen">{{ screen[2] }}</div>
+      <div class="miniscreen">{{ screen[3] }}</div>
+      <div class="miniscreen">{{ screen[4] }}</div>
+    </div>
+    <div class="panel">
+      <div class="buttons">
+        <div
+          class="button"
+          *ngFor="let number of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        >
+          <div
+            class="led"
+            [ngClass]="{ highlight: selectedNumber === number }"
+          ></div>
+          <div class="number">{{ number }}</div>
+        </div>
+      </div>
+      <div class="errors">
+        <div
+          class="error"
+          *ngFor="let highlight of errors"
+          [ngClass]="{
+            'error-highlight': highlight,
+            'error-no-highlight': !highlight
+          }"
+        >
+          X
+        </div>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="winner" (click)="restartGame()">Restart Game</button>
+</main>
